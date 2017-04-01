@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: prod-web
+spec:
+  replicas: 2
+  selector:
+    app: prod-web
+  template:
+    metadata:
+      labels:
+        app: prod-web
+        io.contiv.net-group: web-group
+    spec:
+      containers:
+      - name: prod-web
+        image: alpine
+        command:
+          - sleep
+          - "7200"
