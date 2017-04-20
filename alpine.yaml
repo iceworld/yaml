@@ -10,6 +10,7 @@ spec:
     metadata:
       labels:
         app: prod-web
+        io.contiv.network: contiv-net
         io.contiv.net-group: web-group
     spec:
       containers:
