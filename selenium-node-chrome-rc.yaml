@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: selenium-node-chrome
+        io.contiv.net-group: dev-web-group2
     spec:
       containers:
       - name: selenium-node-chrome
