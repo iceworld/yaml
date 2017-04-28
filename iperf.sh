@@ -1,7 +1,9 @@
 #bandwidth policy
 netctl netprofile create -b 1000kbps -dscp 1 dev-net-profile-2
+#create profile to use the profile
+netctl group create default-net dev-web-group2 -networkprofile=dev-net-profile-2
 
-#create iperf3 pods
+#create iperf3 pods, the yaml file is using dev-net-profile-2
 kubectl create -f https://raw.githubusercontent.com/iceworld/yaml/master/iperf3.yaml
 kubectl create -f https://raw.githubusercontent.com/iceworld/yaml/master/iperf3-svc.yaml
 
