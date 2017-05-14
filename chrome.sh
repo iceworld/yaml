@@ -21,7 +21,7 @@ netctl group create contiv-net dev-web-group4 -policy=allow-diags -networkprofil
 #127.0.0.1:9999, socks 5
 
 #start chrome pod
-kubectl create -f ./selenium-node-chrome-rc.yaml
+kubectl create -f https://raw.githubusercontent.com/iceworld/yaml/master/selenium-node-chrome-rc.yaml
 
 #enable https traffic
 netctl policy rule-add allow-diags 1 -direction=out -protocol=tcp -port = 443 -action=allow -priority 1
