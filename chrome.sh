@@ -5,7 +5,7 @@ netctl netprofile create -b 1000kbps -dscp 1 dev-net-profile-2
 #isolation policy, should not impact bandwidth policy here
 netctl policy create allow-diags
 #deny https outbound traffic using port 443
-netctl policy rule-add allow-diags 1 -direction=out -protocol=tcp -port = 443 -action=deny -priority 1
+netctl policy rule-add allow-diags 1 -direction=out -protocol=tcp -port=443 -action=deny -priority 1
 #enable vnc, icmp 
 netctl policy rule-add allow-diags 2 -direction=in -protocol=icmp -action=allow
 netctl policy rule-add allow-diags 3 -direction=in -protocol=tcp -port=5201 -action=allow -priority 10
