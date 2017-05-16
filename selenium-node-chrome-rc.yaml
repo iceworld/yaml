@@ -17,15 +17,15 @@ spec:
     spec:
       containers:
       - name: selenium-node-chrome
-        image: selenium/standalone-chrome-debug
+        image: selenium/standalone-chrome-debug:2.53.1
         ports:
           - containerPort: 5900 
             hostPort: 5900
         env:
           - name: HUB_PORT_4444_TCP_ADDR 
-            value: "selenium-hub"
+            value: "127.0.0.1"
           - name: HUB_PORT_4444_TCP_PORT 
-            value: "4444"
+            value: "5900"
         resources:
           limits:
             memory: "1000Mi"
